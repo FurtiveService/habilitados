@@ -1,0 +1,70 @@
+<script>
+alert("hola");
+
+//enviar
+/*
+fetch('http://192.168.1.29:3000/enviador', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ importe: 53000, nombre: 'loco lopez' })
+})
+.then(response => {
+  if (response.ok) {
+    console.log('Elemento agregado correctamente');
+    // Puedes hacer algo adicional aquí si lo deseas
+  } else {
+    console.error('Error al agregar el elemento:', response.statusText);
+  }
+})
+.catch(error => {
+  console.error('Error de red:', error);
+});
+
+
+//Eliminar todos los elementos de enviador
+fetch('http://192.168.1.29:3000/eliminarenviador', {
+  method: 'DELETE',
+})
+.then(response => {
+  if (response.ok) {
+    console.log('Todos los elementos de la tabla enviador han sido eliminados');
+  } else {
+    console.error('Error al eliminar los elementos de la tabla enviador:', response.statusText);
+  }
+})
+.catch(error => {
+  console.error('Error de red:', error);
+}); 
+
+// Ruta para CONSULTAR enviador
+fetch('http://192.168.1.29:3000/enviador/consulta')
+  .then(response => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error('Error al obtener el primer elemento de la tabla enviador: ' + response.statusText);
+    }
+  })
+  .then(data => {
+    // Guardar el importe y el nombre en variables
+    const importe = data.importe;
+    const nombre = data.nombre;
+
+    // Hacer algo con las variables
+    console.log('Importe:', importe);
+    console.log('Nombre:', nombre);
+  })
+  .catch(error => {
+    console.error('Error al realizar la solicitud:', error);
+  });
+
+
+ 
+
+
+
+
+
+</script>
